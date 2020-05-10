@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of squares</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <table class="table">
+                        <tr>
+                            <td>Enter Numbers</td>
+                            <td><input type="text" id="num1" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="button" class="btn btn-secondary" onclick="squareSum();">Find sum of squares</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p id="result"></p></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function squareSum()
+        {
+            var num= document.getElementById("num1").value;
+            var i=0;
+            var pos=0;
+            var sum=0;
+            var numbers= num.split(",");
+            
+            for(i=0;i<numbers.length;i++)
+            {
+                sum += Math.pow(numbers[i],2);
+            }
+
+            document.getElementById("result").innerHTML = "Total sum of squares of numbers = " + sum;
+
+        }
+    </script>
+</body>
+</html>

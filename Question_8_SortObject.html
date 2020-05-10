@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Sort</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <table class="table">
+                        <tr>
+                            <td></td>
+                            <td><button type="button" class="btn btn-secondary" onclick="SortArray();">Display Sorted Object</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p id="result"></p></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function SortArray()
+        {
+            const object = [
+                            {
+                                name: "Chair",
+                                inventory: 5,
+                                unit_price: 45.99
+                            },
+                            {
+                                name: "table",
+                                inventory: 10,
+                                unit_price: 123.75
+                            },
+                            {
+                                name: "sofa",
+                                inventory: 2,
+                                unit_price: 399.50
+                            },
+                            {
+                                name: "cot",
+                                inventory: 15,
+                                unit_price: 899.50
+                            }
+                            ];
+            var property = 0;
+            var temp;
+                            
+            for (property in object) {
+                for (var property1 in object) {
+                    if(object[property].name<object[property1].name)
+                    {
+                        temp = object[property];
+                        object[property]=object[property1];
+                        object[property1] = temp;
+                    }
+                }
+            }
+             
+            for (property in object) {
+                document.getElementById("result").innerHTML =document.getElementById("result").innerHTML + "<p>" + object[property].name + " " + object[property].inventory + " " + object[property].unit_price + "</p>";
+            }
+
+
+            
+        }
+    </script>
+</body>
+</html>
